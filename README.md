@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="Extension/images/icon-128.png" width="128" alt="YTShot Icon">
+
 # YTShot
 
 **English** | [Русский](#ytshot-ru)
