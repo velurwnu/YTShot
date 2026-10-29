@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>YTShot</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <menu>
+    <li><button id="prev" disabled>
+      <i class="icon" style="--icon: url(images/sf-backward-frame.png)"></i>
+      <span class="label">Кадр назад</span>
+    </button></li>
+    <li><button id="next" disabled>
+      <i class="icon" style="--icon: url(images/sf-forward-frame.png)"></i>
+      <span class="label">Кадр вперёд</span>
+    </button></li>
+    <li class="separator" role="separator"></li>
+    <li><button id="save" disabled>
+      <i class="icon" style="--icon: url(images/sf-film.png)"></i>
+      <span class="label">Снять кадр</span>
+    </button></li>
+    <li><button id="copy" disabled>
+      <i class="icon" style="--icon: url(images/sf-doc-on-doc.png)"></i>
+      <span class="label">Скопировать кадр</span>
+    </button></li>
+  </menu>
+  <p id="note" class="note" hidden></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

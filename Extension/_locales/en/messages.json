@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "YTShot"
+  },
+  "extDescription": {
+    "message": "Capture the current video frame at its native resolution (lossless PNG). Works while paused."
+  },
+  "actionTitle": {
+    "message": "YTShot — video frame"
+  }
+}

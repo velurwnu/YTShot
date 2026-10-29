@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "YTShot"
+  },
+  "extDescription": {
+    "message": "Скриншот текущего кадра видео в исходном разрешении (PNG без сжатия). Работает и на паузе."
+  },
+  "actionTitle": {
+    "message": "YTShot — кадр видео"
+  }
+}
