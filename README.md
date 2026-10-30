@@ -39,7 +39,16 @@ A lightweight Safari extension for macOS that captures the current video frame i
 The build script compiles the project, codesigns the bundle, places it in `~/Applications/YTShot.app`, and registers the extension in Safari using `pluginkit` without needing the wrapper app to stay running.
 
 **Code Signing:**
-The build is signed with an Apple Development certificate (configured in the Xcode project), so you do not need to enable "Allow Unsigned Extensions". Free developer certificates require rebuilding periodically if they expire.
+Pre-built releases and local builds use a free **Apple Development: Personal Team** certificate (configured in the Xcode project). Because free certificates are not notarized through a paid Apple Developer account, macOS Gatekeeper may show a security warning when opening `YTShot.app` for the first time.
+
+> [!NOTE]
+> **How to launch the app on macOS (Gatekeeper):**
+> - **Right-click (or Control-click)** `YTShot.app` in Finder → select **"Open"** → confirm by clicking **"Open"**; or
+> - Open **System Settings** → **Privacy & Security** → scroll down to the Security section and click **"Open Anyway"**; or
+> - In Terminal, remove the quarantine attribute:
+>   ```bash
+>   xattr -cr ~/Applications/YTShot.app
+>   ```
 
 ---
 
@@ -81,4 +90,15 @@ The build is signed with an Apple Development certificate (configured in the Xco
 
 Скрипт собирает приложение с подписью, ставит его в `~/Applications/YTShot.app` и регистрирует расширение в Safari, не запуская приложение.
 
-Сборка подписывается сертификатом Apple Development (команда задана в проекте), поэтому «Разрешить неподписанные расширения» не нужно. Сертификат бесплатного аккаунта действует ограниченное время — если расширение перестанет загружаться, просто пересоберите.
+Сборка подписывается бесплатным сертификатом **Apple Development: Personal Team** (команда задана в проекте), поэтому «Разрешить неподписанные расширения» не нужно. Так как это персональный сертификат разработчика без платной нотаризации Apple, macOS Gatekeeper при первом открытии может показать предупреждение.
+
+> [!NOTE]
+> **Как пользователям запускать приложение на macOS:**
+> - **ПКМ по приложению** → «Открыть» → подтвердить; либо
+> - **Системные настройки** → **Конфиденциальность и безопасность** → нажать **«Всё равно открыть»**; либо
+> - В терминале снять атрибут карантина:
+>   ```bash
+>   xattr -cr ~/Applications/YTShot.app
+>   ```
+
+Сертификат бесплатного аккаунта действует ограниченное время — если расширение перестанет загружаться, просто пересоберите его через `./build.sh`.
